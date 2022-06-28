@@ -5,10 +5,9 @@ sistema de informacion orientado a la web que sirve para el intercambio de biene
 
 contactanos:
 
-Camacho Rojas Yostin Alexander
-Esquivel Gonzalez Israel 
-Baez Lagos Michael Alejandro
-Romero Sierra Adriana Geraldine
-Sierra Galindo Jhonatan Dario.
+Romero Adriana Geraldine
+Zabala Jessica Carolina
+Diaz Torres Alejandra
+Muñoz Muñoz Carol Lizeth
 
 
