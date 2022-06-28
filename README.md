@@ -5,9 +5,9 @@ sistema de informacion orientado a la web que sirve para el intercambio de biene
 
 contactanos:
 
-Romero Adriana Geraldine
-Zabala Jessica Carolina
-Diaz Torres Alejandra
-Muñoz Muñoz Carol Lizeth
+Romero Adriana Geraldine,
+Zabala Jessica Carolina,
+Diaz Torres Alejandra,
+Muñoz Muñoz Carol Lizeth.
 
 
