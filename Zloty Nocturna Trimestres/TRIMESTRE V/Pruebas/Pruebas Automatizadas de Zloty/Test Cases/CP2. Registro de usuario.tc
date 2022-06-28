@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Prueba de registro de un nuevo usuario</description>
+   <name>CP2. Registro de usuario</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>2a99bb35-3c69-4edc-941f-a7f3f3aa921c</testCaseGuid>
+</TestCaseEntity>

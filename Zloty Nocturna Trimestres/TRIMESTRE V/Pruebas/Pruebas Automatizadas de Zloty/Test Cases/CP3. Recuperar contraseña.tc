@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Prueba de boton olvide mi contraseña donde se recupera por medio de email que llega al usuario</description>
+   <name>CP3. Recuperar contraseña</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>dc507c99-e915-4895-8ea9-5d2b6ce0835d</testCaseGuid>
+</TestCaseEntity>

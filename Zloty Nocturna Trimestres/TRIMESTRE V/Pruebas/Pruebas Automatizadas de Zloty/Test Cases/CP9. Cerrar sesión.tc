@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Prueba de cierre de sesión</description>
+   <name>CP9. Cerrar sesión</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>937f98e0-2761-4e5b-93e1-d17c7c07e279</testCaseGuid>
+</TestCaseEntity>

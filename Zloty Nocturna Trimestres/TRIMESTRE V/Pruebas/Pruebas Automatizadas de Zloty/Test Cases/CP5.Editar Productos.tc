@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Editar datos de los productos ya cargados por el usuario en el sistema</description>
+   <name>CP5.Editar Productos</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e96442cd-2242-455a-9f15-2ed7d536dbc8</testCaseGuid>
+</TestCaseEntity>

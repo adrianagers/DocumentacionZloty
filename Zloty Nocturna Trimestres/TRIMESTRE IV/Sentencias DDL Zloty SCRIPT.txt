@@ -1,0 +1,220 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema dbzloty
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema dbzloty
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `dbzloty` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish2_ci ;
+USE `dbzloty` ;
+
+-- -----------------------------------------------------
+-- Table `dbzloty`.`categoria`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `dbzloty`.`categoria` (
+  `idCategoria` INT(11) NOT NULL AUTO_INCREMENT,
+  `tipoCategoria` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idCategoria`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_spanish2_ci;
+
+
+-- -----------------------------------------------------
+-- Table `dbzloty`.`estado`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `dbzloty`.`estado` (
+  `idEstado` INT(11) NOT NULL AUTO_INCREMENT,
+  `estado` VARCHAR(30) NOT NULL,
+  PRIMARY KEY (`idEstado`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_spanish2_ci;
+
+
+-- -----------------------------------------------------
+-- Table `dbzloty`.`gestionarproducto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `dbzloty`.`gestionarproducto` (
+  `idProducto` INT(11) NOT NULL AUTO_INCREMENT,
+  `nombreProducto` VARCHAR(45) NOT NULL,
+  `descripcionProducto` VARCHAR(45) NOT NULL,
+  `idCategoria` INT(11) NOT NULL,
+  `idEstado` INT(11) NOT NULL,
+  PRIMARY KEY (`idProducto`),
+  INDEX `idCategoria` (`idCategoria` ASC) VISIBLE,
+  INDEX `idEstado` (`idEstado` ASC) VISIBLE,
+  CONSTRAINT `gestionarproducto_ibfk_1`
+    FOREIGN KEY (`idEstado`)
+    REFERENCES `dbzloty`.`estado` (`idEstado`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `gestionarproducto_ibfk_2`
+    FOREIGN KEY (`idCategoria`)
+    REFERENCES `dbzloty`.`categoria` (`idCategoria`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_spanish2_ci;
+
+
+-- -----------------------------------------------------
+-- Table `dbzloty`.`gestionusuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `dbzloty`.`gestionusuario` (
+  `idUsuario` INT(11) NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(30) NOT NULL,
+  `apellido` VARCHAR(30) NOT NULL,
+  `email` VARCHAR(50) NOT NULL,
+  `telefono` INT(11) NOT NULL,
+  `ciudad` VARCHAR(20) NOT NULL,
+  `contrasena` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`idUsuario`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_spanish2_ci;
+
+
+-- -----------------------------------------------------
+-- Table `dbzloty`.`intercambio`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `dbzloty`.`intercambio` (
+  `idIntercambio` INT(11) NOT NULL AUTO_INCREMENT,
+  `idTipoIntercambio` INT(11) NOT NULL,
+  `idUsuario` INT(11) NOT NULL,
+  `idProducto` INT(11) NOT NULL,
+  `cantidad` INT(11) NOT NULL,
+  PRIMARY KEY (`idIntercambio`),
+  INDEX `idUsuario` (`idUsuario` ASC) VISIBLE,
+  INDEX `idProducto` (`idProducto` ASC) VISIBLE,
+  CONSTRAINT `intercambio_ibfk_1`
+    FOREIGN KEY (`idProducto`)
+    REFERENCES `dbzloty`.`gestionarproducto` (`idProducto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `intercambio_ibfk_2`
+    FOREIGN KEY (`idUsuario`)
+    REFERENCES `dbzloty`.`gestionusuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_spanish2_ci;
+
+
+-- -----------------------------------------------------
+-- Table `dbzloty`.`entrada`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `dbzloty`.`entrada` (
+  `idEntrada` INT(11) NOT NULL AUTO_INCREMENT,
+  `fechaEntrada` DATE NOT NULL,
+  `tipoEntrada` VARCHAR(45) NOT NULL,
+  `idIntercambio` INT(11) NOT NULL,
+  `idUsuario` INT(11) NOT NULL,
+  `idProducto` INT(11) NOT NULL,
+  PRIMARY KEY (`idEntrada`),
+  INDEX `idUsuario` (`idUsuario` ASC) VISIBLE,
+  INDEX `idProducto` (`idProducto` ASC) VISIBLE,
+  INDEX `idIntercambio` (`idIntercambio` ASC) VISIBLE,
+  CONSTRAINT `entrada_ibfk_1`
+    FOREIGN KEY (`idIntercambio`)
+    REFERENCES `dbzloty`.`intercambio` (`idIntercambio`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_spanish2_ci;
+
+
+-- -----------------------------------------------------
+-- Table `dbzloty`.`detalleentrada`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `dbzloty`.`detalleentrada` (
+  `idEntrada` INT(11) NOT NULL AUTO_INCREMENT,
+  `idProducto` INT(11) NOT NULL,
+  `producto` VARCHAR(45) NOT NULL,
+  `idUsuario` INT(11) NOT NULL,
+  `cantidad` INT(11) NOT NULL,
+  PRIMARY KEY (`idEntrada`),
+  CONSTRAINT `detalleentrada_ibfk_1`
+    FOREIGN KEY (`idEntrada`)
+    REFERENCES `dbzloty`.`entrada` (`idEntrada`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_spanish2_ci;
+
+
+-- -----------------------------------------------------
+-- Table `dbzloty`.`salida`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `dbzloty`.`salida` (
+  `idSalida` INT(11) NOT NULL AUTO_INCREMENT,
+  `fechaSalida` DATE NOT NULL,
+  `idIntercambio` INT(11) NOT NULL,
+  `idUsuario` INT(11) NOT NULL,
+  `idProducto` INT(11) NOT NULL,
+  PRIMARY KEY (`idSalida`),
+  INDEX `idUsuario` (`idUsuario` ASC) VISIBLE,
+  INDEX `idProducto` (`idProducto` ASC) VISIBLE,
+  INDEX `idIntercambio` (`idIntercambio` ASC) VISIBLE,
+  CONSTRAINT `salida_ibfk_1`
+    FOREIGN KEY (`idIntercambio`)
+    REFERENCES `dbzloty`.`intercambio` (`idIntercambio`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_spanish2_ci;
+
+
+-- -----------------------------------------------------
+-- Table `dbzloty`.`detallesalida`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `dbzloty`.`detallesalida` (
+  `idSalida` INT(11) NOT NULL AUTO_INCREMENT,
+  `idProducto` INT(11) NOT NULL,
+  `producto` VARCHAR(45) NOT NULL,
+  `idUsuario` INT(11) NOT NULL,
+  `cantidad` INT(11) NOT NULL,
+  PRIMARY KEY (`idSalida`),
+  CONSTRAINT `detallesalida_ibfk_1`
+    FOREIGN KEY (`idSalida`)
+    REFERENCES `dbzloty`.`salida` (`idSalida`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_spanish2_ci;
+
+
+-- -----------------------------------------------------
+-- Table `dbzloty`.`gestionfundacion`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `dbzloty`.`gestionfundacion` (
+  `idGestionFundacion` INT(11) NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(30) NOT NULL,
+  `apellido` VARCHAR(30) NOT NULL,
+  `telefono` INT(11) NOT NULL,
+  `correo` VARCHAR(45) NOT NULL,
+  `contraseña` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`idGestionFundacion`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_spanish2_ci;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

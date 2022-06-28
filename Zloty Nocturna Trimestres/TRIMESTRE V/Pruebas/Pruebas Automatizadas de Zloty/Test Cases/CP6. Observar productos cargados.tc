@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Se observan todos los productos carrgados en el sistema por todos los usuarios</description>
+   <name>CP6. Observar productos cargados</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b8e042f4-eff7-4868-b46c-f9fad86f47af</testCaseGuid>
+</TestCaseEntity>
