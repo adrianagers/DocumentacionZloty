@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="WB DataDic" />
+    <meta name="description" content="mydb Data Dictionary." />
+    <title>Diccionario de Datos Zloty</title>
+    <style type="text/css">
+    table{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    abbr{
+        cursor: help;
+    }
+    table, td, th{
+        border-style: solid;
+        border-width: 1px;
+    }
+    table caption{
+        font-size: 120%;
+        font-weight: bold;
+    }
+    caption{
+        color: black;
+    }
+    td, th{
+        border-color: silver;
+    }
+    tr:hover{
+        color: #333;
+        background-color: #F2F2F2;
+    }
+    th{
+        background-color: silver;
+    }
+    td{
+        color: gray;
+    }
+    ul{
+        font-style: italic;
+    }
+    #title-sect{
+        color: gray;
+        text-align: right;
+    }
+    .proj-desc{
+        text-align: right;
+    }
+    </style>
+</head>
+<body>
+<div id="title-sect">
+<h1>Zloty<br>Diccionario de Datos </h1>
+<p>
+<em>2021-11-27</em>
+</p>
+<p class="proj-desc">
+<em></em>
+</p>
+</div>
+<h2>Alphabetic Index</h2>
+<ul>
+<li><a href='#Categoria'>Categoria</a></li>
+<li><a href='#DetalleEntrada'>DetalleEntrada</a></li>
+<li><a href='#DetalleSalida'>DetalleSalida</a></li>
+<li><a href='#Entrada'>Entrada</a></li>
+<li><a href='#Estado'>Estado</a></li>
+<li><a href='#GestionFundacion'>GestionFundacion</a></li>
+<li><a href='#GestionUsuario'>GestionUsuario</a></li>
+<li><a href='#GestionarProducto'>GestionarProducto</a></li>
+<li><a href='#Intercambio'>Intercambio</a></li>
+<li><a href='#Salida'>Salida</a></li>
+</ul>
+<table id='Categoria'>
+<caption>Categoria</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>idCategoria</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Código de la categoría en la que se encuentra el producto</td>
+</tr>
+    <tr>
+        <td>idEstado</td>
+        <td>INT</td>
+        <td>&#10004;</td>
+        <td>&#10004;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class='attr'>&nbsp;</td>
+        <td></td>
+        <td>Código con el que se identifica el estado del producto</td>
+    </tr>
+    <tr>
+        <td>estado</td>
+        <td>VARCHAR(45)</td>
+        <td>&nbsp;</td>
+        <td>&#10004;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class='attr'>&nbsp;</td>
+        <td></td>
+        <td>espeficiacion del estado del producto</td>
+    </tr>
+
+<table id='Estado'>
+<caption>Estado</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>idEstado</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Código del estado en el que se encuentra el producto</td>
+</tr>
+<tr>
+    <td>Estado</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Estado en el que se encuentra el producto</td>
+</tr>
+<table id='GestionFundacion'>
+<caption>GestionFundacion</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>idGestionFundacion</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Código de la Fundación asociada a Zloty</td>
+</tr>
+<tr>
+    <td>Nombre</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Nombre de la persona representante de la  Fundación asociada a Zloty</td>
+</tr>
+<tr>
+    <td>Apellido</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Apellido de la persona representante de la  Fundación asociada a Zloty</td>
+</tr>
+<tr>
+    <td>Correo</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Correo  de la persona representante de la  Fundación asociada a Zloty</td>
+</tr>
+<tr>
+    <td>Contrasena</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td> Contraseña de la persona representante de la  Fundación asociada a Zloty</td>
+</tr>
+<table id='GestionUsuario'>
+<caption>GestionUsuario</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>idUsuario</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Código de identificación del usuario registrado</td>
+</tr>
+<tr>
+    <td>Nombre</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Nombre del usuario registrado</td>
+</tr>
+<tr>
+    <td>Apellido</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Apellido del usuario registrado</td>
+</tr>
+<tr>
+    <td>Telefono</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Telefono del usuario registrado</td>
+</tr>
+<tr>
+    <td>Contrasena</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Contraseña de la cuenta del usuario registrado</td>
+</tr>
+<table id='GestionarProducto'>
+<caption>GestionarProducto</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>idProducto</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Código del producto registrado en la base de datos</td>
+</tr>
+<tr>
+    <td>NombreProducto</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Nombre del producto registrado en la base de datos</td>
+</tr>
+<tr>
+    <td>DescripcionProducto</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Descripción del producto registrado en la base de datos</td>
+</tr>
+<tr>
+    <td>idCategoria</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Llave foranea que relaciona la tabla Categoría con la tabla GestionarProducto</td>
+</tr>
+<tr>
+    <td>idEstado</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Llave foranea que relaciona la tabla Estado con la tabla GestionarProducto</td>
+</tr>
+<table id='Password'>
+    <caption>Password</caption>
+    <tr><td colspan='11'></td></tr>
+    <tr>
+        <th>Column name</th>
+        <th>DataType</th>
+        <th><abbr title='Primary Key'>PK</abbr></th>
+        <th><abbr title='Not Null'>NN</abbr></th>
+        <th><abbr title='Unique'>UQ</abbr></th>
+        <th><abbr title='Binary'>BIN</abbr></th>
+        <th><abbr title='Unsigned'>UN</abbr></th>
+        <th><abbr title='Zero Fill'>ZF</abbr></th>
+        <th><abbr title='Auto Increment'>AI</abbr></th>
+        <th>Default</th>
+        <th>Comment</th>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>INT</td>
+        <td>&#10004;</td>
+        <td>&#10004;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class='attr'>&nbsp;</td>
+        <td></td>
+        <td>id con la cual se guardara la contraseña</td>
+    </tr>
+    <tr>
+        <td>email</td>
+        <td>VARCHAR(45)</td>
+        <td>&nbsp;</td>
+        <td>&#10004;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class='attr'>&nbsp;</td>
+        <td></td>
+        <td>dato de contacto (correo) con el cual se tendra comunicacion con el usuario</td>
+    </tr>
+    <tr>
+        <td>token</td>
+        <td>VARCHAR(45)</td>
+        <td>&nbsp;</td>
+        <td>&#10004;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class='attr'>&nbsp;</td>
+        <td></td>
+        <td>dato que identifica el usuario que ah ingresado</td>
+    </tr>
+    <tr>
+        <td>codigo</td>
+        <td>INT</td>
+        <td>&nbsp;</td>
+        <td>&#10004;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class='attr'>&nbsp;</td>
+        <td></td>
+        <td>codigo de recuperacion en caso de que la contraseña sea olvidada</td>
+    </tr>
+    <tr>
+        <td>fecha</td>
+        <td>DATE</td>
+        <td>&nbsp;</td>
+        <td>&#10004;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class='attr'>&nbsp;</td>
+        <td></td>
+        <td>registra el ingreso y salida del usuario mediante dia y hora</td>
+    </tr>
+<table id='Intercambio'>
+<caption>Intercambio</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>idIntercambio</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Codigo de indentificación del intercambio (Donación/trueque)</td>
+</tr>
+<tr>
+    <td>idTipoIntercambio</td>
+    <td>TINYINT(2)</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Se especifica el id del tipo intercambio se hará (Donación o trueque)</td>
+</tr>
+<tr>
+    <td>NombreTipoIntercambio</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Se especifica el intercambio que se hará (Donación o trueque)</td>
+</tr>
+<tr>
+    <td>idUsuario</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Llave foranea que relaciona la tabla usuario con la tabla intercambio</td>
+</tr>
+<tr>
+    <td>idProducto</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Llave foranea que relaciona la tabla producto con la tabla intercambio</td>
+</tr>
+<tr>
+    <td>Cantidad</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Se especifica la cantidad de productos que se intercambarán</td>
+</tr>
+<table id='tipodeintercambio'>
+    <caption>Tipo De Intercambio</caption>
+    <tr><td colspan='11'></td></tr>
+    <tr>
+        <th>Column name</th>
+        <th>DataType</th>
+        <th><abbr title='Primary Key'>PK</abbr></th>
+        <th><abbr title='Not Null'>NN</abbr></th>
+        <th><abbr title='Unique'>UQ</abbr></th>
+        <th><abbr title='Binary'>BIN</abbr></th>
+        <th><abbr title='Unsigned'>UN</abbr></th>
+        <th><abbr title='Zero Fill'>ZF</abbr></th>
+        <th><abbr title='Auto Increment'>AI</abbr></th>
+        <th>Default</th>
+        <th>Comment</th>
+    </tr>
+    <tr>
+        <td>id tipo de intercambio</td>
+        <td>INT</td>
+        <td>&#10004;</td>
+        <td>&#10004;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class='attr'>&nbsp;</td>
+        <td></td>
+        <td>identifica si es un intercambio o una donacion</td>
+    </tr>
+    <tr>
+        <td>TipoIntercambio</td>
+        <td>VARCHAR(45)</td>
+        <td>&nbsp;</td>
+        <td>&#10004;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class='attr'>&nbsp;</td>
+        <td></td>
+        <td>indica de forma mas detallada si se trata de un intercambio o una salida</td>
+    </tr>
+
+</body>
+</html>
